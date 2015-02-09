@@ -1,0 +1,60 @@
+<?xml version="1.0"?><!--
+/**
+ * @category    SchumacherFM_Hugo
+ * @package     Helper
+ * @author      Cyrill at Schumacher dot fm / @SchumacherFM
+ * @copyright   Copyright (c)
+ * @license     OSL-3.0
+ */
+-->
+<config>
+    <modules>
+        <SchumacherFM_Hugo>
+            <version>0.0.1</version>
+        </SchumacherFM_Hugo>
+    </modules>
+
+    <global>
+        <models>
+            <hugo>
+                <class>SchumacherFM_Hugo_Model</class>
+            </hugo>
+        </models>
+        <helpers>
+            <hugo>
+                <class>SchumacherFM_Hugo_Helper</class>
+            </hugo>
+        </helpers>
+    </global>
+
+    <frontend>
+        <secure_url>
+            <hugo>/hugo/</hugo>
+        </secure_url>
+
+        <routers>
+            <hugo>
+                <use>standard</use>
+                <args>
+                    <module>SchumacherFM_Hugo</module>
+                    <frontName>hugo</frontName>
+                </args>
+            </hugo>
+        </routers>
+        <!--<layout>-->
+        <!--<updates>-->
+        <!--<hugo module="SchumacherFM_Hugo">-->
+        <!--<file>hugo.xml</file>-->
+        <!--</hugo>-->
+        <!--</updates>-->
+        <!--</layout>-->
+    </frontend>
+
+    <default>
+        <system>
+            <hugo>
+
+            </hugo>
+        </system>
+    </default>
+</config>

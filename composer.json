@@ -1,0 +1,10 @@
+{
+    "name": "schumacherfm/magento-hugo",
+    "type": "magento-module",
+    "homepage": "https://github.com/SchumacherFM/Magento-Hugo",
+    "description": "Magento Hugo - JSON stream generator for category, product and cms pages for http://gohugo.io.",
+    "license": ["OSL-3.0"],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

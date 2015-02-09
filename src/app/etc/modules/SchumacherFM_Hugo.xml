@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    SchumacherFM_Hugo
+ * @package     Helper
+ * @author      Cyrill at Schumacher dot fm / @SchumacherFM
+ * @copyright   Copyright (c)
+ * @license     OSL-3.0
+ */
+-->
+<config>
+    <modules>
+        <SchumacherFM_Hugo>
+            <active>true</active>
+            <codePool>community</codePool>
+        </SchumacherFM_Hugo>
+    </modules>
+</config>
