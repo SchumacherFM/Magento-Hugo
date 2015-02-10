@@ -23,7 +23,7 @@ class SchumacherFM_Hugo_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function maxProducts()
     {
-        return 50;
+        return 10;
     }
 
     /**
@@ -33,7 +33,7 @@ class SchumacherFM_Hugo_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function offsetProducts()
     {
-        return null;
+        return 20;
     }
 
     /**
@@ -47,6 +47,32 @@ class SchumacherFM_Hugo_Helper_Data extends Mage_Core_Helper_Abstract
         return json_encode([
             'Path'    => $path,
             'Content' => $content,
-        ], JSON_FORCE_OBJECT);
+        ], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_FORCE_OBJECT);
+    }
+
+    /**
+     * @param int $productId
+     *
+     * @return array
+     */
+    public function getCategoryIDs($productId)
+    {
+        $r = Mage::getResourceSingleton('catalog/product')->getReadConnection();
+
+        // is_parent=1 ensures that we'll get only category IDs those are direct parents of the product, instead of
+        // fetching all parent IDs, including those are higher on the tree
+        $select = $r->select()->distinct()
+            ->from(
+                Mage::getResourceSingleton('catalog/product')->getTable('catalog/category_product_index'),
+                array('category_id')
+            )
+            ->where('product_id = ? AND is_parent = 1', $productId)
+            ->where('store_id = ?', (int)Mage::app()->getStore()->getId());
+
+        $return = array_map('intval', $r->fetchCol($select));
+        if (count($return) === 0) {
+            $return = [0];
+        }
+        return $return;
     }
 }

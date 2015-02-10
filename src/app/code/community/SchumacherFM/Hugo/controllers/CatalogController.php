@@ -35,27 +35,29 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
         $c = Mage::getModel('catalog/product')->getCollection();
         Mage::getModel('catalog/layer')->prepareProductCollection($c);
 
-        foreach ($c->getAllIds(Mage::helper('hugo')->maxProducts(),Mage::helper('hugo')->offsetProducts()) as $pid) {
-            $this->_productIterator($pid);
+        foreach ($c->getAllIds(Mage::helper('hugo')->maxProducts(), Mage::helper('hugo')->offsetProducts()) as $pid) {
+            foreach (Mage::helper('hugo')->getCategoryIDs($pid) as $categoryID) {
+                $this->_productIterator((int)$pid, $categoryID);
+            }
         }
+        return $this;
     }
 
     /**
      * @param int $productId
+     * @param int $categoryID
      *
      * @throws Mage_Core_Exception
      */
-    private function _productIterator($productId)
+    private function _productIterator($productId, $categoryID)
     {
-        // consider store id
+
         // forced change of theme to SchumacherFM_Hugo theme
-        // dependent on the categories render the product n-times
-        // load all categories IDs for this product
 
         // Prepare helper and params
         $viewHelper = Mage::helper('catalog/product_view');
         $params     = new Varien_Object();
-        $params->setCategoryId(0);
+        $params->setCategoryId($categoryID);
         $params->setSpecifyOptions([]);
 
         $viewHelper->prepareAndRender($productId, $this, $params);
@@ -67,7 +69,9 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
             ) . "\n";
         flush();
         Mage::unregister('current_product');
+        Mage::unregister('current_category');
         Mage::unregister('product');
+        Mage::unregister('category');
     }
 
     private function _prepareFrontMatter()
