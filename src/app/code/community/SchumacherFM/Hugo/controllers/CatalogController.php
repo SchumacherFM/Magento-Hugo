@@ -10,6 +10,18 @@
 class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Action
 {
 
+    public function preDispatch()
+    {
+        parent::preDispatch();
+
+        // fake the route for the real handlers
+        $this->getRequest()->setRoutingInfo([
+            'requested_route'      => 'catalog',
+            'requested_controller' => 'product',
+            'requested_action'     => 'view',
+        ]);
+    }
+
     public function productAction()
     {
         if (false === Mage::helper('hugo')->isAuthenticated($this->getRequest()->getParam('auth', ''))) {
@@ -18,32 +30,56 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
             $response->setMessage($this->__('Authentication failed'));
             return $this->getResponse()->setBody($response->toJson());
         }
+
         /** @var Mage_Catalog_Model_Resource_Product_Collection $c */
         $c = Mage::getModel('catalog/product')->getCollection();
         Mage::getModel('catalog/layer')->prepareProductCollection($c);
 
-        foreach ($c->getAllIds(50) as $pid) {
+        foreach ($c->getAllIds(Mage::helper('hugo')->maxProducts(),Mage::helper('hugo')->offsetProducts()) as $pid) {
             $this->_productIterator($pid);
         }
     }
 
+    /**
+     * @param int $productId
+     *
+     * @throws Mage_Core_Exception
+     */
     private function _productIterator($productId)
     {
+        // consider store id
+        // forced change of theme to SchumacherFM_Hugo theme
+        // dependent on the categories render the product n-times
+        // load all categories IDs for this product
+
         // Prepare helper and params
         $viewHelper = Mage::helper('catalog/product_view');
         $params     = new Varien_Object();
         $params->setCategoryId(0);
         $params->setSpecifyOptions([]);
 
-        // include first found category
-        // simulate route to product view page otherwise no handle will be found
-
-        ob_start();
         $viewHelper->prepareAndRender($productId, $this, $params);
-        $content = ob_get_clean();
 
-        $p = Mage::registry('current_product');
-        echo Mage::helper('hugo')->getHugoSourceJson($p->getUrlKey() . '.md', $content) . "\n";
+        echo Mage::helper('hugo')->getHugoSourceJson(
+                $this->_getProduct()->getUrlKey() . '.md',
+                $this->_prepareFrontMatter() .
+                $this->getResponse()->getBody()
+            ) . "\n";
         flush();
+        Mage::unregister('current_product');
+        Mage::unregister('product');
+    }
+
+    private function _prepareFrontMatter()
+    {
+        return '' . "\n";
+    }
+
+    /**
+     * @return Mage_Catalog_Model_Product
+     */
+    private function _getProduct()
+    {
+        return Mage::registry('current_product');
     }
 }

@@ -15,6 +15,28 @@ class SchumacherFM_Hugo_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
+     * temp impl. don't want to dump 100k products
+     *
+     * used in getAllIds() query
+     *
+     * @return int
+     */
+    public function maxProducts()
+    {
+        return 50;
+    }
+
+    /**
+     * used in getAllIds() query
+     *
+     * @return null
+     */
+    public function offsetProducts()
+    {
+        return null;
+    }
+
+    /**
      * @param string $path
      * @param string $content
      *
