@@ -13,7 +13,8 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
     public function preDispatch()
     {
         parent::preDispatch();
-
+        // @todo figure out how to simulate the template path instead of setting it
+        // in the backend system config
         // fake the route for the real handlers
         $this->getRequest()->setRoutingInfo([
             'requested_route'      => 'catalog',
@@ -34,7 +35,8 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
         /** @var Mage_Catalog_Model_Resource_Product_Collection $c */
         $c = Mage::getModel('catalog/product')->getCollection();
         Mage::getModel('catalog/layer')->prepareProductCollection($c);
-
+        $this->getResponse()->setHeader('Content-Type', 'application/json; charset=UTF-8', true);
+        $this->getResponse()->sendResponse();
         foreach ($c->getAllIds(Mage::helper('hugo')->maxProducts(), Mage::helper('hugo')->offsetProducts()) as $pid) {
             foreach (Mage::helper('hugo')->getCategoryIDs($pid) as $categoryID) {
                 $this->_productIterator((int)$pid, $categoryID);
@@ -63,7 +65,7 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
         $viewHelper->prepareAndRender($productId, $this, $params);
 
         echo Mage::helper('hugo')->getHugoSourceJson(
-                $this->_getProduct()->getUrlKey() . '.md',
+                $this->_getUrlPath(),
                 $this->_prepareFrontMatter() .
                 $this->getResponse()->getBody()
             ) . "\n";
@@ -74,9 +76,22 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
         Mage::unregister('category');
     }
 
+    private function _getUrlPath()
+    {
+        $p = $this->_getProduct()->getUrlPath(Mage::registry('current_category'));
+        $p = str_replace('.html', '.md', $p);
+        return $p;
+    }
+
     private function _prepareFrontMatter()
     {
-        return '' . "\n";
+        $fm = Mage::getModel('hugo/frontMatter');
+        $fm->setProduct($this->_getProduct());
+        return (string)$fm->setData(array(
+            'date'  => $this->_getProduct()->getUpdatedAt(),
+            'title' => $this->_getProduct()->getName(),
+            'menu'  => array(), // @todo // getCategpry path as array
+        ));
     }
 
     /**
