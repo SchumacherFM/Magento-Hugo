@@ -7,13 +7,18 @@
  * @copyright   Copyright (c)
  * @license     OSL-3.0
  */
-class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Action
+class SchumacherFM_Hugo_ProductController extends Mage_Core_Controller_Front_Action
 {
 
     public function preDispatch()
     {
         parent::preDispatch();
-        // @todo figure out how to simulate the template path instead of setting it
+
+        // at the beginning this is now hard coded but must be configurable in the backend.
+        Mage::getSingleton('core/design_package')->setPackageName('default');
+        Mage::getSingleton('core/design_package')->setTheme('template', 'hugo');
+        Mage::getSingleton('core/design_package')->setTheme('layout', 'hugo');
+
         // in the backend system config
         // fake the route for the real handlers
         $this->getRequest()->setRoutingInfo([
@@ -23,7 +28,7 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
         ]);
     }
 
-    public function productAction()
+    public function jsonAction()
     {
         if (false === Mage::helper('hugo')->isAuthenticated($this->getRequest()->getParam('auth', ''))) {
             $response = new Varien_Object();
@@ -69,6 +74,7 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
                 $this->_prepareFrontMatter() .
                 $this->getResponse()->getBody()
             ) . "\n";
+        $this->getResponse()->clearBody();
         flush();
         Mage::unregister('current_product');
         Mage::unregister('current_category');
@@ -86,12 +92,7 @@ class SchumacherFM_Hugo_CatalogController extends Mage_Core_Controller_Front_Act
     private function _prepareFrontMatter()
     {
         $fm = Mage::getModel('hugo/frontMatter');
-        $fm->setProduct($this->_getProduct());
-        return (string)$fm->setData(array(
-            'date'  => $this->_getProduct()->getUpdatedAt(),
-            'title' => $this->_getProduct()->getName(),
-            'menu'  => array(), // @todo // getCategpry path as array
-        ));
+        return (string)$fm;
     }
 
     /**

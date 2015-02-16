@@ -9,10 +9,25 @@
  */
 class SchumacherFM_Hugo_Model_FrontMatter extends Varien_Object
 {
-    /**
-     * @var Mage_Catalog_Model_Product
-     */
-    private $_product;
+
+    protected function _construct()
+    {
+        parent::_construct();
+
+        $this->setData([
+            'date'  => $this->getProduct()->getUpdatedAt(),
+            'title' => $this->getProduct()->getName(),
+            'menu'  => [], // @todo // getCategory path as array
+        ]);
+
+//        var_export([
+//            $this->getProduct()->getSku(),
+//             $this->getCategory()->getPathInStore(),
+//             $this->getCategory()->getPathIds(),
+//             $this->getCategory()->getRequestPath(),
+//        ]);
+
+    }
 
     public function __toString()
     {
@@ -22,9 +37,9 @@ class SchumacherFM_Hugo_Model_FrontMatter extends Varien_Object
          * Mage::registry('current_category');
          * for each iteration the object will be updated automatically
          */
-        Mage::dispatchEvent('hugo_front_matter_before_to_string', array(
+        Mage::dispatchEvent('hugo_front_matter_before_to_string', [
             'front_matter' => $this,
-        ));
+        ]);
         return '---' . PHP_EOL .
         Mage::getSingleton('hugo/spcy')->dump($this->getData(), false, false, true)
         . PHP_EOL . '---' . PHP_EOL . PHP_EOL;
@@ -35,17 +50,14 @@ class SchumacherFM_Hugo_Model_FrontMatter extends Varien_Object
      */
     public function getProduct()
     {
-        return $this->_product;
+        return Mage::registry('current_product');
     }
 
     /**
-     * @param Mage_Catalog_Model_Product $product
-     *
-     * @return $this
+     * @return Mage_Catalog_Model_Category
      */
-    public function setProduct(Mage_Catalog_Model_Product $product)
+    public function getCategory()
     {
-        $this->_product = $product;
-        return $this;
+        return Mage::registry('current_category');
     }
 }
