@@ -13,20 +13,41 @@ class SchumacherFM_Hugo_Model_FrontMatter extends Varien_Object
     protected function _construct()
     {
         parent::_construct();
-
         $this->setData([
-            'date'  => $this->getProduct()->getUpdatedAt(),
+            'date'  => $this->_getDate(),
             'title' => $this->getProduct()->getName(),
-            'menu'  => [], // @todo // getCategory path as array
+            'menu'  => $this->_getMenu(),
         ]);
+    }
 
-//        var_export([
-//            $this->getProduct()->getSku(),
-//             $this->getCategory()->getPathInStore(),
-//             $this->getCategory()->getPathIds(),
-//             $this->getCategory()->getRequestPath(),
-//        ]);
+    /**
+     * @return string
+     */
+    protected function _getDate()
+    {
+        $parts = explode(' ', $this->getProduct()->getUpdatedAt());
+        return $parts[0];
+    }
 
+    /**
+     * @todo proper implementation
+     *
+     * @return array
+     */
+    protected function _getMenu()
+    {
+        $suffix  = Mage::helper('catalog/category')->getCategoryUrlSuffix();
+        $urlPath = str_replace($suffix, '', $this->getCategory()->getUrlPath()); // can lead to bugs
+        $parts   = explode('/', $urlPath);
+        $root    = array_shift($parts);
+        $l1      = array_shift($parts);
+        $menu    = [
+            $root => [
+                'parent' => $l1,
+            ]
+        ];
+
+        return $menu;
     }
 
     public function __toString()

@@ -23,7 +23,7 @@ class SchumacherFM_Hugo_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function maxProducts()
     {
-        return 10;
+        return null; // 10;
     }
 
     /**
@@ -33,7 +33,7 @@ class SchumacherFM_Hugo_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function offsetProducts()
     {
-        return 20;
+        return null; // 20;
     }
 
     /**

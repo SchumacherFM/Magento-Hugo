@@ -9,7 +9,11 @@
  */
 class SchumacherFM_Hugo_CategoryController extends Mage_Core_Controller_Front_Action
 {
-
+    /**
+     * @todo implement the structure of menuExample.json
+     *
+     * @return $this|Zend_Controller_Response_Abstract
+     */
     public function jsonAction()
     {
         $this->getResponse()->setHeader('Content-Type', 'application/json; charset=UTF-8', true);

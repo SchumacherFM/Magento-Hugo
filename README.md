@@ -1,9 +1,44 @@
 Magento-Hugo
 ============
 
+WIP = Work in Progress and cancelled.
+
 Magento Hugo generates JSON streams for [Hugo](http://gohugo.io) - Static site generator #golang.
 
-WIP = Work in Progress
+This module depends on this [Hugo version](https://github.com/SchumacherFM/hugo/tree/SchumacherFM_SourceJSON).
+You must compile Hugo yourself to get it working. If you ask me nicely ;-) I'll can
+send you binaries for any OS.
+
+This is pretty time consuming module and I'm not sure if it's worth to continue the 
+work because you can easily implement a full page cache in Magento which does the same as
+generating static sites with Hugo. 
+
+But if you want to host your Magento site on an AWS S3 instance or Github pages then this 
+would be the perfect solution. You'll only need an e.g. Angular JS ap integrated which 
+handles the cart, checkout, etc to the real Magento store.
+
+Or if you plan to use Magento without the cart features and use it only as a data provider then
+Hugo would be perfect for that task.
+
+#### Todo Magento module
+
+- Implementation of category controller to generate the menu from the Magento categories
+- FrontMatter model needs an update on the menu integration
+- All phtml files in the template folder must be converted to markdown
+
+#### Todo Hugo
+
+- A nice template for Magento especially to handle recursively the categories.
+
+#### Heads up
+
+The JSON stream for product view pages is already working correctly so you can try it out.
+
+With the original Magento demo data Hugo will fail to render the pages because some menu keys
+can't be found.
+
+Downloading the JSON stream takes longer than Hugo needs for generating the pages 
+(on my MacBook working with localhost)
 
 Compatibility
 -------------

@@ -58,9 +58,6 @@ class SchumacherFM_Hugo_ProductController extends Mage_Core_Controller_Front_Act
      */
     private function _productIterator($productId, $categoryID)
     {
-
-        // forced change of theme to SchumacherFM_Hugo theme
-
         // Prepare helper and params
         $viewHelper = Mage::helper('catalog/product_view');
         $params     = new Varien_Object();
@@ -72,7 +69,7 @@ class SchumacherFM_Hugo_ProductController extends Mage_Core_Controller_Front_Act
         echo Mage::helper('hugo')->getHugoSourceJson(
                 $this->_getUrlPath(),
                 $this->_prepareFrontMatter() .
-                $this->getResponse()->getBody()
+                $this->_getContent()
             ) . "\n";
         $this->getResponse()->clearBody();
         flush();
@@ -80,6 +77,17 @@ class SchumacherFM_Hugo_ProductController extends Mage_Core_Controller_Front_Act
         Mage::unregister('current_category');
         Mage::unregister('product');
         Mage::unregister('category');
+    }
+
+    /**
+     * @todo this must be removed if product view page generation is completely switched to markdown.
+     *       this is a temp implementation to parse HTML better with the blackfriday markdown parser of hugo
+     *
+     * @return string
+     */
+    private function _getContent()
+    {
+        return trim(preg_replace('~\s+~', ' ', $this->getResponse()->getBody()));
     }
 
     private function _getUrlPath()

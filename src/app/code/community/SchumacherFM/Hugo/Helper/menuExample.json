@@ -1,0 +1,905 @@
+{
+  "main": [
+    {
+      "Url": "https://github.com/spf13/hugo/releases",
+      "Name": "Download Hugo",
+      "Menu": "main",
+      "Identifier": "",
+      "Pre": "\u003ci class='fa fa-download'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -200,
+      "Parent": "",
+      "Children": null
+    },
+    {
+      "Url": "/showcase/",
+      "Name": "Showcase",
+      "Menu": "main",
+      "Identifier": "",
+      "Pre": "\u003ci class='fa fa-cubes'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -180,
+      "Parent": "",
+      "Children": null
+    },
+    {
+      "Url": "http://discuss.gohugo.io/",
+      "Name": "Discuss Hugo",
+      "Menu": "main",
+      "Identifier": "",
+      "Pre": "\u003ci class='fa fa-comments'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -150,
+      "Parent": "",
+      "Children": null
+    },
+    {
+      "Url": "",
+      "Name": "About Hugo",
+      "Menu": "main",
+      "Identifier": "about",
+      "Pre": "\u003ci class='fa fa-heart'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -110,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/meta/release-notes/",
+          "Name": "Release Notes",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "about",
+          "Children": null
+        },
+        {
+          "Url": "/meta/roadmap/",
+          "Name": "Hugo Roadmap",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "about",
+          "Children": null
+        },
+        {
+          "Url": "/meta/license/",
+          "Name": "License",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 50,
+          "Parent": "about",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Getting Started",
+      "Menu": "main",
+      "Identifier": "getting started",
+      "Pre": "\u003ci class='fa fa-road'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -100,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/overview/introduction/",
+          "Name": "Introduction",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 5,
+          "Parent": "getting started",
+          "Children": null
+        },
+        {
+          "Url": "/overview/quickstart/",
+          "Name": "Quickstart",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "getting started",
+          "Children": null
+        },
+        {
+          "Url": "/overview/installing/",
+          "Name": "Installing Hugo",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "getting started",
+          "Children": null
+        },
+        {
+          "Url": "/overview/usage/",
+          "Name": "Using Hugo",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 30,
+          "Parent": "getting started",
+          "Children": null
+        },
+        {
+          "Url": "/overview/configuration/",
+          "Name": "Configuration",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 40,
+          "Parent": "getting started",
+          "Children": null
+        },
+        {
+          "Url": "/overview/source-directory/",
+          "Name": "Source Organization",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 50,
+          "Parent": "getting started",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Content",
+      "Menu": "main",
+      "Identifier": "content",
+      "Pre": "\u003ci class='fa fa-file-text'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -90,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/content/organization/",
+          "Name": "Organization",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "content",
+          "Children": null
+        },
+        {
+          "Url": "/content/front-matter/",
+          "Name": "Front Matter",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "content",
+          "Children": null
+        },
+        {
+          "Url": "/content/sections/",
+          "Name": "Sections",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 30,
+          "Parent": "content",
+          "Children": null
+        },
+        {
+          "Url": "/content/types/",
+          "Name": "Types",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 40,
+          "Parent": "content",
+          "Children": null
+        },
+        {
+          "Url": "/content/archetypes/",
+          "Name": "Archetypes",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 50,
+          "Parent": "content",
+          "Children": null
+        },
+        {
+          "Url": "/content/ordering/",
+          "Name": "Ordering",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 60,
+          "Parent": "content",
+          "Children": null
+        },
+        {
+          "Url": "/content/summaries/",
+          "Name": "Summaries",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 65,
+          "Parent": "content",
+          "Children": null
+        },
+        {
+          "Url": "/content/example/",
+          "Name": "Example",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 70,
+          "Parent": "content",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Themes",
+      "Menu": "main",
+      "Identifier": "themes",
+      "Pre": "\u003ci class='fa fa-desktop'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -85,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/themes/overview/",
+          "Name": "Themes Overview",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "themes",
+          "Children": null
+        },
+        {
+          "Url": "/themes/installing/",
+          "Name": "Installing Themes",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "themes",
+          "Children": null
+        },
+        {
+          "Url": "/themes/usage/",
+          "Name": "Using a Theme",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 30,
+          "Parent": "themes",
+          "Children": null
+        },
+        {
+          "Url": "/themes/customizing/",
+          "Name": "Customizing a Theme",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 40,
+          "Parent": "themes",
+          "Children": null
+        },
+        {
+          "Url": "/themes/creation/",
+          "Name": "Creating a Theme",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 50,
+          "Parent": "themes",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Templates",
+      "Menu": "main",
+      "Identifier": "layout",
+      "Pre": "\u003ci class='fa fa-columns'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -80,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/templates/overview/",
+          "Name": "Overview",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/go-templates/",
+          "Name": "Go Template Primer",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 15,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/functions/",
+          "Name": "Functions",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/variables/",
+          "Name": "Variables",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/content/",
+          "Name": "Single Content",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 30,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/list/",
+          "Name": "List of Content",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 40,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/homepage/",
+          "Name": "Homepage",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 50,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/terms/",
+          "Name": "Taxonomy Terms",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 60,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/views/",
+          "Name": "Content Views",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 70,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/partials/",
+          "Name": "Partial Templates",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 80,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/rss/",
+          "Name": "RSS",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 90,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/sitemap/",
+          "Name": "Sitemap",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 95,
+          "Parent": "layout",
+          "Children": null
+        },
+        {
+          "Url": "/templates/404/",
+          "Name": "Custom 404 page",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 100,
+          "Parent": "layout",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Taxonomies",
+      "Menu": "main",
+      "Identifier": "taxonomy",
+      "Pre": "\u003ci class='fa fa-tags'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -70,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/taxonomies/overview/",
+          "Name": "Overview",
+          "Menu": "main",
+          "Identifier": "taxonomy overview",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "taxonomy",
+          "Children": null
+        },
+        {
+          "Url": "/taxonomies/usage/",
+          "Name": "Usage",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 15,
+          "Parent": "taxonomy",
+          "Children": null
+        },
+        {
+          "Url": "/taxonomies/displaying/",
+          "Name": "Displaying",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "taxonomy",
+          "Children": null
+        },
+        {
+          "Url": "/taxonomies/templates/",
+          "Name": "Templates",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 30,
+          "Parent": "taxonomy",
+          "Children": null
+        },
+        {
+          "Url": "/taxonomies/ordering/",
+          "Name": "Ordering",
+          "Menu": "main",
+          "Identifier": "Ordering Taxonomies",
+          "Pre": "",
+          "Post": "",
+          "Weight": 60,
+          "Parent": "taxonomy",
+          "Children": null
+        },
+        {
+          "Url": "/taxonomies/methods/",
+          "Name": "Structure \u0026 Methods",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 75,
+          "Parent": "taxonomy",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Extras",
+      "Menu": "main",
+      "Identifier": "extras",
+      "Pre": "\u003ci class='fa fa-gift'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -60,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/extras/aliases/",
+          "Name": "Aliases",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/builders/",
+          "Name": "Builders",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/comments/",
+          "Name": "Comments",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 30,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/crossreferences/",
+          "Name": "Cross-References",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 40,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/livereload/",
+          "Name": "LiveReload",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 50,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/menus/",
+          "Name": "Menus",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 60,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/permalinks/",
+          "Name": "Permalinks",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 70,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/pagination/",
+          "Name": "Pagination",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 80,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/scratch/",
+          "Name": "Scratch",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 80,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/shortcodes/",
+          "Name": "Shortcodes",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 80,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/datafiles/",
+          "Name": "Data Files",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 90,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/highlighting/",
+          "Name": "Syntax Highlighting",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 90,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/dynamiccontent/",
+          "Name": "Dynamic Content",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 91,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/toc/",
+          "Name": "Table of Contents",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 100,
+          "Parent": "extras",
+          "Children": null
+        },
+        {
+          "Url": "/extras/urls/",
+          "Name": "URLs",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 110,
+          "Parent": "extras",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Community",
+      "Menu": "main",
+      "Identifier": "community",
+      "Pre": "\u003ci class='fa fa-group'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -50,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/community/mailing-list/",
+          "Name": "Mailing List",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "community",
+          "Children": null
+        },
+        {
+          "Url": "/community/press/",
+          "Name": "Press",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 20,
+          "Parent": "community",
+          "Children": null
+        },
+        {
+          "Url": "/community/contributing/",
+          "Name": "Contributing to Hugo",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 30,
+          "Parent": "community",
+          "Children": null
+        },
+        {
+          "Url": "http://discuss.gohugo.io",
+          "Name": "Discussion Forum",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 150,
+          "Parent": "community",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Tutorials",
+      "Menu": "main",
+      "Identifier": "tutorials",
+      "Pre": "\u003ci class='fa fa-book'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -40,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/tutorials/automated-deployments/",
+          "Name": "Automated deployments",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "tutorials",
+          "Children": null
+        },
+        {
+          "Url": "/tutorials/creating-a-new-theme/",
+          "Name": "Creating a New Theme",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "tutorials",
+          "Children": null
+        },
+        {
+          "Url": "/tutorials/github-pages-blog/",
+          "Name": "Hosting on GitHub",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "tutorials",
+          "Children": null
+        },
+        {
+          "Url": "/tutorials/mathjax/",
+          "Name": "MathJax Support",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "tutorials",
+          "Children": null
+        },
+        {
+          "Url": "/tutorials/migrate-from-jekyll/",
+          "Name": "Migrating from Jekyll",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "tutorials",
+          "Children": null
+        }
+      ]
+    },
+    {
+      "Url": "",
+      "Name": "Troubleshooting",
+      "Menu": "main",
+      "Identifier": "troubleshooting",
+      "Pre": "\u003ci class='fa fa-wrench'\u003e\u003c/i\u003e",
+      "Post": "",
+      "Weight": -30,
+      "Parent": "",
+      "Children": [
+        {
+          "Url": "/troubleshooting/overview/",
+          "Name": "Troubleshooting Overview",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 0,
+          "Parent": "troubleshooting",
+          "Children": null
+        },
+        {
+          "Url": "/troubleshooting/strange-eof-error/",
+          "Name": "Strange EOF error",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 5,
+          "Parent": "troubleshooting",
+          "Children": null
+        },
+        {
+          "Url": "/troubleshooting/categories-with-accented-characters/",
+          "Name": "Accented Categories",
+          "Menu": "main",
+          "Identifier": "",
+          "Pre": "",
+          "Post": "",
+          "Weight": 10,
+          "Parent": "troubleshooting",
+          "Children": null
+        }
+      ]
+    }
+  ]
+}
